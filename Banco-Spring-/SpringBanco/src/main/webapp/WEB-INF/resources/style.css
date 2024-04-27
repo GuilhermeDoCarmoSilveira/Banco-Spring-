@@ -1,0 +1,48 @@
+/* Reset de estilos para garantir consistência entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para o corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Estilos para o menu de navegação */
+#menu {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+#menu ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+#menu ul li {
+  display: inline;
+}
+
+#menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+#menu ul li a:hover {
+  background-color: #555;
+}
+
+/* Estilos para o cabeçalho */
+div[align="center"] {
+  margin-top: 20px;
+}
+
+div[align="center"] h1 {
+  color: #333;
+}
+

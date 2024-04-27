@@ -30,6 +30,7 @@ create table contaEspecial(
 
 go
 
+drop trigger t_controlaSaldo
 create trigger t_controlaSaldo on contaBancaria
 after update 
 as
@@ -50,7 +51,8 @@ begin
 		
 			set @limite = (select limite from contaEspecial where numConta = @numConta)
 
-			if(@saque > @limite)
+
+			if(@saque > (@limite + (select saldo from deleted)))
 			begin
 				rollback transaction 
 				raiserror('Saque Negado, o valor solicitado esta ultrapassando o limite', 16, 1)
@@ -66,3 +68,7 @@ begin
 			end
 	end
 end
+
+
+select * from contaBancaria
+select * from contaPoupanca
